@@ -77,6 +77,8 @@ Documentaries aren't wall-to-wall action. Most shots are establishing shots, slo
 
 For comparison, all 330s on Seedance 2.5 at 720p with the same retries comes to about **$175**.
 
+**Billing rule (confirmed on kie.ai):** *"If a generation task fails, KIE will not charge credits for that failed task."* Moderation rejections and upstream errors cost nothing. A generation that *succeeds* but fails our QC **is** charged. The retry lines above cover those QC fails only, which is why the critic and good prompting are where the savings come from. Each task's real charge is in `creditsConsumed` from `GET /api/v1/jobs/recordInfo`, so we log actual spend, not estimates.
+
 **Cost cut you can add later:** switch keyframes to `nano-banana-2-1` (6 cr at 2K) or `seedream/5-flash-image-to-image` (3.24 cr). That brings the film down to about **$20**.
 
 ---
@@ -282,7 +284,7 @@ ffmpeg -loop 1 -i kf/S012.png -vf "scale=7680:-1,zoompan=z='min(zoom+0.0007,1.10
 
 | Risk | Mitigation |
 |---|---|
-| **Moderation blocks combat** (Seedance blocks keywords; Kling follows Chinese content rules) | `combat-lexicon.md` (equipment, effects and period words instead of violent verbs), distance framing, no gore. Fallback chain ends at T0. **Step 0: test 20 of Henry's real prompts on each model.** |
+| **Moderation blocks combat** (Seedance blocks keywords; Kling follows Chinese content rules). Rejected tasks aren't charged, so the cost is time, not money | `combat-lexicon.md` (equipment, effects and period words instead of violent verbs), distance framing, no gore. Fallback chain ends at T0. **Step 0: test 20 of Henry's real prompts on each model.** |
 | Character drift | sheets + 10-ref keyframes + locked first/last frames + Kling elements + vision QC |
 | kie is a reseller (prices change, some integrations break) | `kie.py` fallback client; record `creditsConsumed` per task; `max_credits` caps; switching to fal.ai only changes the endpoint |
 | 720p output | ffmpeg lanczos upscale to 1080p, fine for YouTube. Hero shots can use Kling `pro` (18 cr/s) |
