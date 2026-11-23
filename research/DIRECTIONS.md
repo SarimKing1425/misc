@@ -6,6 +6,9 @@ rationale, barrier-audit status, novelty-check status, current version, owner ag
 (none yet — Stage 2 pending)
 
 ## Standing track
-- **formalization** — first serious Lean 4 formalization of P, NP, polynomial-time reductions, NP-completeness
-  (Cook–Levin), and the known barriers (e.g. Baker–Gill–Solovay oracle results). Type: realistic-publishable.
-  Starts from Mathlib's `Turing.TM2ComputableInPolyTime`. Status: not started.
+- **formalization** — ORIGINAL GOAL (first Lean formalization of P, NP, Cook–Levin, barriers) IS NOT NOVEL:
+  cslib-frontier already has P, NP, SAT/3SAT NP-completeness (Cook–Levin), Baker–Gill–Solovay, ¬ETH and many circuit
+  lower bounds (see KNOWN_RESULTS.md). Revised plan (to be decided in Stage 2): depend on cslib-frontier (pinned) instead
+  of duplicating; state the lab's main theorems with its community-reviewed definitions; contribute only where the
+  lab's own research needs something missing (e.g. barriers beyond BGS: natural proofs, algebrization, locality).
+  Type: supporting infrastructure. Status: re-scoping.
