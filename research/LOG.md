@@ -75,3 +75,13 @@ token/limit notes.
   "graveyard" of refuted approaches. Its Atom feed (https://pequalnp.com/feed.atom) is now in the frontier watch. As of
   today it is grinding many small conjectural lemmas (e.g. L-meta-133, L-gct-179). Their lemma record and graveyard are
   prior art for our novelty gate.
+
+## 2026-11-23 — PAUSED by director (mid Stage 1, batch 2)
+- Done: batch 1 (surveys 01, 02 + cross-checks). Batch 2: surveys 03 (uniform lower bounds & fine-grained) and 04
+  (metacomplexity, magnification, barriers) written; cross-check of 03 written; cross-check of 04 was in progress and
+  was stopped (not written). Surveys 03/04 are NOT yet merged into KNOWN_RESULTS.md / BIB.md.
+- To resume in this session: `Workflow({scriptPath: <session>/workflows/scripts/stage1-survey-batch-wf_315392e2-c9c.js,
+  resumeFromRunId: "wf_315392e2-c9c", args: <same batch-2 args>})` — only the 04 cross-check re-runs.
+  In a new session: run the 04 cross-check alone (red-team on research/survey/04-…md → research/reviews/survey-04-…crosscheck.md),
+  merge 03/04 ledger sections, then batch 3 (proof complexity + logic/independence + KRW; algebraic complexity & GCT),
+  then Stage 2 selection. Start every session with `python3 scripts/frontier_watch.py`.
