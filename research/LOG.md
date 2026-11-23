@@ -20,3 +20,16 @@ token/limit notes.
   more time on it). The methodology lessons are adopted regardless (CLAUDE.md "The model to copy").
 - Director instructions recorded: parallel agents; hard novelty gate before investing in any idea; focus on P vs NP.
 - Next: Stage 1 survey workflow (9 lit-scouts + independent cross-checkers, in parallel).
+- Pilot (before Stage 1 fan-out): agent roles created mid-session are not registered until the next session
+  (`agent type 'red-team' not found`). For this session, workflow agents read their role file from
+  `.claude/agents/<role>.md` and run at effort max; the frontmatter write-guards only take effect from the next
+  session, so the lead audits each stage's writes with `git status`/`git diff --stat` against each agent's
+  allowed paths.
+
+## 2026-11-23 — Stage 1: survey (started)
+- Workflow `stage1-survey` launched: 10 areas (circuit lower bounds; magnification & meta-complexity; proof
+  complexity; algebraic complexity & GCT; communication complexity & KRW; range avoidance; logic & independence;
+  the P = NP side; formalization state; barriers & failed attempts). Per area: lit-scout → independent
+  cross-checker (bounds re-verified at source; 2023–2026 search for solved "open" problems) → scout applies
+  verified corrections. Then single-writer merge into KNOWN_RESULTS.md / BIB.md and a completeness critic.
+  32 agents at effort max.
