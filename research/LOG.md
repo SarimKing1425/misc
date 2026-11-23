@@ -70,3 +70,8 @@ token/limit notes.
   sandbox; RSS + listing pages work. Watch protocol written into CLAUDE.md.
 - Mistake + fix: re-launched the batch-1 script by accident while starting batch 2; stopped within seconds, no files
   changed (git clean). Batches now use a parameterized script (`stage1-survey-batch`, areas passed as args, ≤2 areas).
+- Competitor noted (director, 2026-11-23): pequalnp.com — a public, livestreamed AI agent fleet (by "Brilliant",
+  brilliant.design) attacking P vs NP with Lean-checked lemmas, programs aimed at both P ≠ NP and P = NP, and a public
+  "graveyard" of refuted approaches. Its Atom feed (https://pequalnp.com/feed.atom) is now in the frontier watch. As of
+  today it is grinding many small conjectural lemmas (e.g. L-meta-133, L-gct-179). Their lemma record and graveyard are
+  prior art for our novelty gate.

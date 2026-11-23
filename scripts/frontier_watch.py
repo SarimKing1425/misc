@@ -5,6 +5,7 @@ Sources (all public; failures are recorded, never fatal):
   - arXiv listing pages "pastweek" for cs.CC, cs.LO (HTML) and RSS for cs.CC, cs.LO, math.LO
   - ECCC recent reports page (often unreachable from this sandbox; recorded if so)
   - cslib-frontier git history (local clone at $CSLIB_CLONE, default /tmp/claude-0/ext/cslib-frontier)
+  - pequalnp.com Atom feed (public AI agent fleet attacking P vs NP; its lemmas and dead ends are prior art)
 
 Output: research/watch/<YYYY-MM-DD>.md (new items only, relevance-flagged first) and
 research/watch/seen.txt (IDs already reported). Usage: python3 scripts/frontier_watch.py [--all]
@@ -97,6 +98,20 @@ def eccc():
     return items, None
 
 
+def pequalnp():
+    text, err = fetch("https://pequalnp.com/feed.atom")
+    if text is None:
+        return [], f"pequalnp: {err}"
+    items = []
+    for e in re.findall(r"(?s)<entry>(.*?)</entry>", text):
+        title = clean((re.search(r"(?s)<title[^>]*>(.*?)</title>", e) or [None, ""])[1])
+        link = (re.search(r'href="([^"]+)"', e) or [None, "https://pequalnp.com"])[1]
+        upd = clean((re.search(r"<updated>(.*?)</updated>", e) or [None, ""])[1])
+        items.append({"id": "peqnp:" + upd + ":" + title[:60], "title": title, "authors": upd[:16], "abstract": "",
+                      "url": link, "src": "pequalnp.com"})
+    return items, None
+
+
 def cslib_activity(days=7):
     if not os.path.isdir(os.path.join(CSLIB, ".git")):
         return [], f"cslib-frontier clone not found at {CSLIB}"
@@ -121,7 +136,7 @@ def main():
     seen = set(open(SEEN).read().split()) if os.path.exists(SEEN) else set()
     items, errors = [], []
     for fn, arg in [(arxiv_pastweek, "cs.CC"), (arxiv_pastweek, "cs.LO"), (arxiv_rss, "cs.CC"), (arxiv_rss, "cs.LO"),
-                    (arxiv_rss, "math.LO"), (eccc, None), (cslib_activity, None)]:
+                    (arxiv_rss, "math.LO"), (eccc, None), (cslib_activity, None), (pequalnp, None)]:
         got, err = fn(arg) if arg else fn()
         items += got
         if err:
@@ -133,9 +148,11 @@ def main():
     new = [it for it in merged.values() if show_all or it["id"] not in seen]
     for it in new:
         it["hits"] = sorted({m.group(0).lower() for m in KW.finditer(it["title"] + " " + it["abstract"])})
-    flagged = [it for it in new if it["hits"] and not it["id"].startswith("cslib:")]
-    other = [it for it in new if not it["hits"] and not it["id"].startswith("cslib:")]
-    cslib = [it for it in new if it["id"].startswith("cslib:")]
+    fleet = [it for it in new if it["id"].startswith("peqnp:")]
+    new_nf = [it for it in new if not it["id"].startswith("peqnp:")]
+    flagged = [it for it in new_nf if it["hits"] and not it["id"].startswith("cslib:")]
+    other = [it for it in new_nf if not it["hits"] and not it["id"].startswith("cslib:")]
+    cslib = [it for it in new_nf if it["id"].startswith("cslib:")]
     today = dt.date.today().isoformat()
     path = os.path.join(WATCH, f"{today}.md")
     with open(path, "a") as f:
@@ -152,6 +169,9 @@ def main():
         f.write("\n## cslib-frontier activity (last 7 days)\n")
         for it in cslib:
             f.write(f"- {it['authors']} [{it['id'][6:]}]({it['url']}) {it['title']}\n")
+        f.write("\n## pequalnp.com fleet record (lemmas proposed/checked/refuted)\n")
+        for it in fleet:
+            f.write(f"- {it['authors']} [{it['title']}]({it['url']})\n")
         f.write("\n## Other new items\n")
         for it in other:
             f.write(f"- [{it['id']}]({it['url']}) {it['title']} ({it['src']})\n")

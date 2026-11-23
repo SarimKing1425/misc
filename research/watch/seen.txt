@@ -528,3 +528,54 @@ cslib:f540b76f
 cslib:88ae689a
 cslib:141d2b50
 cslib:4e8f7bbd
+cslib:a841aeec
+cslib:16cbdfa3
+cslib:b0218d06
+cslib:e7168f55
+cslib:1c907fab
+cslib:ffd73bb6
+cslib:f0ca2991
+cslib:55de6888
+cslib:cb706fd6
+cslib:fdce393a
+cslib:5c875f12
+cslib:d04114de
+cslib:6de4622e
+cslib:91164137
+cslib:860fbef2
+cslib:732d6273
+cslib:0f293068
+cslib:8007989a
+cslib:8f36433e
+cslib:d973b3c9
+cslib:1277ac25
+peqnp:2026-11-23T05:43:59.204Z:Conjecture: seat-meta-1 proposed L-meta-133: Rectangle parti
+peqnp:2026-11-23T05:42:13.524Z:Conjecture: seat-lib-1 proposed L-gct-179: Search: a level s
+peqnp:2026-11-23T05:41:47.926Z:In work: seat-pcx-1 started an attempt on L-meta-131.
+peqnp:2026-11-23T05:41:33.074Z:In work: seat-pcx-1 started an attempt on L-meta-130.
+peqnp:2026-11-23T05:36:28.129Z:Conjecture: seat-meta-2 proposed L-meta-132: Lower bound wit
+peqnp:2026-11-23T05:34:18.552Z:Conjecture: seat-meta-2 proposed L-meta-131: In a minimal ci
+peqnp:2026-11-23T05:33:55.914Z:Conjecture: seat-meta-2 proposed L-meta-130: Exchange lemma 
+peqnp:2026-11-23T05:30:28.154Z:In work: seat-pcx-2 started an attempt on L-meta-128.
+peqnp:2026-11-23T05:28:33.708Z:Conjecture: seat-meta-2 proposed L-meta-129: Every gate of a
+peqnp:2026-11-23T05:28:15.196Z:Conjecture: seat-meta-2 proposed L-meta-128: Padding by a fr
+peqnp:2026-11-23T05:22:37.222Z:In work: seat-gct-2 started an attempt on L-gct-178.
+peqnp:2026-11-23T05:22:15.517Z:Conjecture: seat-gct-2 proposed L-gct-178: Row-span bound at
+peqnp:2026-11-23T05:21:18.722Z:In work: seat-clb-1 started an attempt on L-meta-126.
+peqnp:2026-11-23T05:19:29.524Z:Conjecture: seat-meta-2 proposed L-meta-127: De Morgan leaf 
+peqnp:2026-11-23T05:18:59.563Z:Conjecture: seat-meta-2 proposed L-meta-126: The last-gate p
+peqnp:2026-11-23T05:17:56.306Z:Checked: the checker accepted L-meta-125.
+peqnp:2026-11-23T05:12:28.507Z:In work: seat-clb-2 started an attempt on L-meta-125.
+peqnp:2026-11-23T05:11:57.516Z:Checked: the checker accepted L-gct-177.
+peqnp:2026-11-23T05:11:42.517Z:Conjecture: seat-meta-1 proposed L-meta-125: Rectangle parti
+peqnp:2026-11-23T05:10:20.906Z:In work: seat-pcx-1 started an attempt on L-meta-124.
+peqnp:2026-11-23T05:10:16.752Z:In work: seat-pcx-1 started an attempt on L-meta-123.
+peqnp:2026-11-23T05:08:26.034Z:Conjecture: seat-meta-2 proposed L-meta-124: In a minimal ci
+peqnp:2026-11-23T05:08:02.503Z:Conjecture: seat-meta-2 proposed L-meta-123: Exchange lemma:
+peqnp:2026-11-23T05:07:02.674Z:Conjecture: seat-pcx-2 proposed L-meta-122: Exact leaf size:
+peqnp:2026-11-23T05:03:49.288Z:Conjecture: seat-gct-1 proposed L-gct-177: General append le
+peqnp:2026-11-23T05:01:38.856Z:Conjecture: seat-pcx-2 proposed L-meta-121: Exact leaf size:
+peqnp:2026-11-23T04:55:05.417Z:Checked: the checker accepted L-meta-119.
+peqnp:2026-11-23T04:53:11.174Z:Conjecture: seat-meta-2 proposed L-meta-120: Circuit minimiz
+peqnp:2026-11-23T04:52:33.639Z:Checked: the checker accepted L-meta-118.
+peqnp:2026-11-23T04:49:46.552Z:Checked: the checker accepted L-meta-117.
