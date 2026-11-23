@@ -26,6 +26,14 @@ A false proof reported as true is the only real failure.
 - Don't spend time on side verification of the RH announcement; focus on P vs NP.
 - Report in plain language first, technical detail second. No hype.
 
+## Frontier watch (the field moves weekly — check the live internet, not just papers)
+- Run `python3 scripts/frontier_watch.py` at the start of every session and every stage. It appends new arXiv
+  (cs.CC, cs.LO, math.LO), ECCC and cslib-frontier activity to `research/watch/<date>.md` (relevance-flagged).
+- Before any attack round, the novelty-checker reads the latest watch digests and checks the direction against
+  cslib-frontier (https://github.com/cslib-community/cslib-frontier: roadmap, issues, recent commits) and Oct–Nov 2026
+  AI-lab releases (OpenAI, Anthropic, Google DeepMind). A problem is "open" only if no 2026 preprint or live public
+  effort claims it. Prefer directions nobody is visibly racing on; if we join a crowded one, say so explicitly.
+
 ## The model to copy (Lean as referee)
 The director cites a Nov 2026 Anthropic/Alpöge Lean-checked result on the Riemann zeta function. Lessons we
 adopt regardless of its exact scope: (a) the main theorem is stated with vetted library definitions

@@ -65,3 +65,8 @@ token/limit notes.
 - Next: batch 2 (4 agents): (03) uniform lower bounds — L vs NP time–space, P vs PSPACE/QBF, Williams' √t-space
   simulation & tree evaluation, post-ETH fine-grained landscape; (04) meta-complexity/magnification + barriers & failed
   attempts. Every scout must also check cslib-frontier and Oct–Nov 2026 AI-produced results.
+- Frontier watch added (`scripts/frontier_watch.py`, no agents): first run 2026-11-23 → 530 new items, 28 flagged,
+  400 cslib-frontier commits in the last 7 days (~57/day). arXiv API was rate-limited and ECCC unreachable from the
+  sandbox; RSS + listing pages work. Watch protocol written into CLAUDE.md.
+- Mistake + fix: re-launched the batch-1 script by accident while starting batch 2; stopped within seconds, no files
+  changed (git clean). Batches now use a parameterized script (`stage1-survey-batch`, areas passed as args, ≤2 areas).
