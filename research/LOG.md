@@ -33,3 +33,13 @@ token/limit notes.
   cross-checker (bounds re-verified at source; 2023–2026 search for solved "open" problems) → scout applies
   verified corrections. Then single-writer merge into KNOWN_RESULTS.md / BIB.md and a completeness critic.
   32 agents at effort max.
+- 2026-11-23: Director stopped the 32-agent Stage 1 run (only 2 scouts had started, none finished; no files written).
+  New standing rule: **≤4 agents per workflow run**, stages run as sequential small batches (CLAUDE.md updated).
+- Director forwarded Williams' "Some Estimated Likelihoods" essay and his 23 Nov 2026 thread; lead's web search found
+  the claimed Oct 2026 AI refutation of ETH (OpenAI + Anthropic, Lean-checked, under community review). Recorded in
+  research/survey/00-director-sources.md. Stage 1 re-planned around it:
+  - Batch 1: (X) ETH refutation — primary sources, exact claims, technique, status, consequences;
+             (Y) algorithmic method & Boolean circuit lower bounds frontier (incl. range avoidance) — each + cross-check.
+  - Batch 2: uniform lower bounds (L vs NP time–space, P vs PSPACE/QBF, Williams' 2025 time–space simulation) and the
+             rest of the P = NP side; meta-complexity/magnification + barriers & failed attempts.
+  - Batch 3: proof complexity + logic/independence + KRW/communication; algebraic complexity & GCT; formalization state.

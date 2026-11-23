@@ -17,7 +17,9 @@ Never quit. Never fake progress. A dead direction with a clear post-mortem is pr
 A false proof reported as true is the only real failure.
 
 ## Director's standing instructions (Sarim, 2026-11-23)
-- Run agents in parallel. The research is long-running; if usage limits bite, the director pauses work.
+- **Agent budget: at most 4 agents per workflow run** (director, 2026-11-23: "less than 5 … we can go slow").
+  Run stages as a sequence of small batches instead of one big fan-out. Agents may run in parallel within a batch.
+- The research is long-running; if usage limits bite, the director pauses work.
 - **Do not spend effort re-deriving anything already known.** Before investing in any idea, check it
   against research/KNOWN_RESULTS.md and run a novelty check (arXiv, ECCC, DBLP, Google Scholar, textbooks,
   surveys, blogs/MathOverflow/cstheory threads). If it is known, record it and move on.
@@ -66,7 +68,8 @@ referees. Persuasive prose is worth nothing until it compiles.
   the AI-use disclosure. **Never post, submit or email anything without Sarim's explicit approval.**
 
 ## Operating rules
-- Pilot small before big fan-outs. Track token use; warn the director if a stage burns through limits.
+- Pilot small before big fan-outs; never more than 4 agents per run. Track token use; warn the director if a stage
+  burns through limits.
 - After every stage: update research/LOG.md, commit, push to the session branch, and give a plain-language
   summary (tried / survived / died and why / next). If something looks big: "this might be important, here's
   what still needs checking", with the list of checks.
